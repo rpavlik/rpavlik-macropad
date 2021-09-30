@@ -45,6 +45,7 @@ class App:
                 macropad.pixels[i] = self.macros[i][0]
             else:  # Key not in use, no label or LED
                 macropad.pixels[i] = 0
+        macropad.pixels.show()
 
     def switch(self):
         """ Activate application settings; update OLED labels and LED
@@ -144,18 +145,21 @@ macropad.display.brightness = 0
 # Set up timeout
 autoscreen = AutoOffScreen(15 * 60)
 
+
 def lights_on():
-            print("lights on!")
-            display_sleeper.wake()
-            # triggers re-setting the neopixels
-            macropad.pixels.brightness = 1
-            apps[app_index].set_pixels()
+    print("lights on!")
+    display_sleeper.wake()
+    # triggers re-setting the neopixels
+    macropad.pixels.brightness = 1
+    apps[app_index].set_pixels()
+
 
 def lights_off():
-            print("lights out")
-            display_sleeper.sleep()
-            macropad.pixels.show()
-            macropad.pixels.brightness = 0
+    print("lights out")
+    display_sleeper.sleep()
+    macropad.pixels.brightness = 0
+    macropad.pixels.show()
+
 
 autoscreen.handle_on = lights_on
 autoscreen.handle_off = lights_off
