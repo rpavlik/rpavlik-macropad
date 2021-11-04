@@ -155,6 +155,7 @@ def lights_off():
     print("lights out")
     display_sleeper.sleep()
     macropad.pixels.brightness = 0
+    macropad.pixels[0] = 0x002200
     macropad.pixels.show()
 
 
