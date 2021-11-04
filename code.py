@@ -11,11 +11,9 @@ import os
 import time
 import displayio
 import terminalio
-import board
 from adafruit_display_shapes.rect import Rect
 from adafruit_display_text import label
 from adafruit_macropad import MacroPad
-from adafruit_bitmap_font import bitmap_font
 
 from autoscreen import AutoOffScreen
 from adafruit_displayio_sh1107_wrapper import SH1107_Wrapper
@@ -24,16 +22,15 @@ from adafruit_displayio_sh1107_wrapper import SH1107_Wrapper
 
 MACRO_FOLDER = "/macros"
 FONT = terminalio.FONT
-# FONT = bitmap_font.load_font("ter-u12n-more.pcf")
 
 
 # CLASSES AND FUNCTIONS ----------------
 
 
 class App:
-    """ Class representing a host-side application, for which we have a set
-        of macro sequences. Project code was originally more complex and
-        this was helpful, but maybe it's excessive now?"""
+    """Class representing a host-side application, for which we have a set
+    of macro sequences. Project code was originally more complex and
+    this was helpful, but maybe it's excessive now?"""
 
     def __init__(self, appdata):
         self.name = appdata["name"]
@@ -48,8 +45,8 @@ class App:
         macropad.pixels.show()
 
     def switch(self):
-        """ Activate application settings; update OLED labels and LED
-            colors. """
+        """Activate application settings; update OLED labels and LED
+        colors."""
         macropad.red_led = True
         self.set_pixels()
         group[13].text = self.name  # Application name
