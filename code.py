@@ -142,8 +142,8 @@ macropad.display.brightness = 0
 
 # MAIN LOOP ----------------------------
 
-# Set up timeout
-autoscreen = AutoOffScreen(15 * 60)
+# Set up timeout: 1 hr
+autoscreen = AutoOffScreen(60 * 60)
 
 
 def lights_on():
