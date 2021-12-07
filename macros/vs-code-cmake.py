@@ -7,18 +7,19 @@ app = {                       # REQUIRED dict, must be named 'app'
     'name': 'VS Code (CMake)',       # Application name
     'macros': [              # List of button macros...
         # COLOR    LABEL    KEY SEQUENCE
+        # now unused unicode characters: ◉»
         # 1st row ----------
         (0xff8c00, 'Cmds', [Keycode.CONTROL, "P"]),
         (0x000055, 'Format', [Keycode.CONTROL, 'I']),
         (0x000000, '', []),
         # 2nd row ---------- Peek
         (0x005b63, 'AllRefs', [Keycode.ALT, Keycode.SHIFT, Keycode.F12]),
-        (0x005b63, '◉PkDef', [Keycode.ALT, Keycode.F12]),
-        (0x005b63, '◉Decl', [Keycode.ALT, Keycode.SHIFT, Keycode.F11]), # this needs a custom keyboard shortcut added for "Peek Declaration"
+        (0x005b63, 'PkDef', [Keycode.CONTROL, Keycode.SHIFT, Keycode.F10]),
+        (0x005b63, 'PkDecl', [Keycode.ALT, Keycode.SHIFT, Keycode.F11]), # this needs a custom keyboard shortcut added for "Peek Declaration"
         # 3rd row ---------- Go To
-        (0x005b63, '»Ref', [Keycode.SHIFT, Keycode.F12]),
-        (0x005b63, '»Def', [Keycode.F12]),
-        (0x005b63, '»Decl', [Keycode.CONTROL, Keycode.SHIFT, Keycode.F11]), # this needs a custom keyboard shortcut added for "Go to Declaration"
+        (0x005b63, 'Go Ref', [Keycode.SHIFT, Keycode.F12]),
+        (0x005b63, 'Go Def', [Keycode.F12]),
+        (0x005b63, 'Go Decl', [Keycode.CONTROL, Keycode.SHIFT, Keycode.F11]), # this needs a custom keyboard shortcut added for "Go to Declaration"
         # 4th row ----------
         (0xc27e00, 'Build', [Keycode.F7]),
         (0x000000, '', ''),
